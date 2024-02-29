@@ -171,6 +171,7 @@ body {
 }
 @media (min-width: 768px) {
   .card_user {
+    align-items: flex-start;
     flex-direction: row;
     padding: 1rem 1.5rem;
   }

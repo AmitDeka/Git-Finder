@@ -153,6 +153,7 @@ body {
     flex-direction: column;
     padding: 1rem 0.75rem;
     @include breakpoint(md) {
+      align-items: flex-start;
       flex-direction: row;
       padding: 1rem 1.5rem;
     }
