@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #141c2f;
+  color: #fefefd;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  margin: 80px auto;
+  width: 95%;
+}
+@media (min-width: 576px) {
+  .container {
+    width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    margin: 100px auto;
+    width: 550px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    margin: 120px auto;
+    width: 600px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    margin: 140px auto;
+    width: 700px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 800px;
+  }
+}
+
+.card {
+  width: 100%;
+}
+.card_nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.card_nav a {
+  color: #fefefd;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.card_search {
+  align-items: center;
+  background-color: #1f2a48;
+  display: flex;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.75rem;
+}
+.card_search svg {
+  fill: #0179fe;
+  height: 1.75rem;
+  width: 1.75rem;
+}
+.card_search form {
+  position: relative;
+  width: 100%;
+}
+.card_search form input {
+  background-color: transparent;
+  border: none;
+  color: #fefefd;
+  font-size: 1.15rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+.card_search form input:focus {
+  outline: none;
+}
+.card_search form button {
+  background-color: #0179fe;
+  border: #0179fe;
+  bottom: 0;
+  color: #fefefd;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.card_user {
+  background-color: #1f2a48;
+  display: flex;
+  padding: 1.5rem 2rem;
+}
+.card_user_image {
+  height: 150px;
+  width: 150px;
+}
+.card_user_image img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+.card_user_info {
+  display: grid;
+  padding: 0 0 0 2rem;
+  width: calc(100% - 150px);
+}
+.card_user_info_header {
+  display: flex;
+  justify-content: space-between;
+}
+.card_user_info_header_name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.card_user_info_header_username {
+  color: #0179fe;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+.card_user_info_header_date {
+  color: rgba(254, 254, 253, 0.5);
+  font-weight: 500;
+}
+.card_user_info_bio {
+  padding: 1rem 0;
+}
+.card_user_info_bio p {
+  color: rgba(254, 254, 253, 0.7);
+}
+.card_user_info_repo {
+  align-items: center;
+  background-color: #141c2f;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+.card_user_info_repo h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.card_user_info_repo p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.card_user_info_details {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.card_user_info_details div {
+  align-items: center;
+  display: inline-flex;
+}
+.card_user_info_details div i {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+}
+.card_user_info_details div p {
+  font-size: 1.25rem;
+}/*# sourceMappingURL=global.css.map */
