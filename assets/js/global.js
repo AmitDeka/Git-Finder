@@ -4,9 +4,43 @@ const userDetails = document.querySelector("#userDetails");
 getUserData = async (username) => {
   const response = await fetch(API_URL + username);
   const userData = await response.json();
-  console.log(userData);
+  // console.log(userData);
 
-  userDetailsCard = `
+  // console.log(response);
+  // if (response.status === 404) {
+  if (!response.ok) {
+    userDetailsCard = `
+    <div class="card_user_notfound">
+      <img src="./assets/image/not_found.svg" alt="Not found" />
+      <h1>User details not found</h1>
+      <p>Please check the username and try again.</p>
+    </div>
+    `;
+  } else {
+    const formatDate = (dateString) => {
+      const date = new Date(dateString);
+      const options = { day: "numeric", month: "long", year: "numeric" };
+      return date.toLocaleDateString("en-GB", options);
+    };
+    const createdDate = userData.created_at;
+    const formattedDate = formatDate(createdDate);
+
+    const bioName = userData.name ? userData.name : "No public name";
+    const bioText = userData.bio ? userData.bio : "This profile has no bio";
+    const bioAddr = userData.location
+      ? userData.location
+      : "<span>Not Available</span>";
+    const bioTwitter = userData.twitter_username
+      ? userData.twitter_username
+      : "<span>Not Available</span>";
+    const bioBlogLink = userData.blog
+      ? userData.blog
+      : "<span>Not Available</span>";
+    const bioCompany = userData.company
+      ? userData.company
+      : "<span>Not Available</span>";
+
+    userDetailsCard = `
     <div class="card_user_image">
         <img
             src="${userData.avatar_url}"
@@ -16,7 +50,7 @@ getUserData = async (username) => {
         <div class="card_user_info_header">
             <div>
                 <h1 class="card_user_info_header_name">
-                    ${userData.name}
+                    ${bioName}
                 </h1>
                 <a
                   class="card_user_info_header_username"
@@ -26,12 +60,12 @@ getUserData = async (username) => {
             </div>
             <div>
               <p class="card_user_info_header_date">
-                Joined <span>25 Jan 2022</span>
+                Joined <span>${formattedDate}</span>
               </p>
             </div>
         </div>
         <div class="card_user_info_bio">
-          <p>${userData.bio}</p>
+          <p>${bioText}</p>
         </div>
         <div class="card_user_info_repo">
             <div>
@@ -50,25 +84,35 @@ getUserData = async (username) => {
         <div class="card_user_info_details">
             <div>
                 <i class="ri-map-pin-fill"></i>
-                <p>${userData.location}</p>
+                <p>${bioAddr}</p>
             </div>
             <div>
                 <i class="ri-twitter-x-fill"></i>
-                <p>${userData.twitter_username}</p>
+                <p>${bioTwitter}</p>
             </div>
             <div>
                 <i class="ri-links-fill"></i>
-                <p>${userData.blog}</p>
+                <p>${bioBlogLink}</p>
             </div>
             <div>
                 <i class="ri-building-fill"></i>
-                <p>${userData.company}</p>
+                <p>${bioCompany}</p>
             </div>
         </div>
     </div>
   `;
-
+  }
   userDetails.innerHTML = userDetailsCard;
 };
 
-getUserData("sangammukherjee");
+// const formSubmit = () => {
+//   const searchInput = document.querySelector("#usrName");
+//   console.log(searchInput.value);
+//   if (searchInput.value != "") {
+//     getUserData(searchInput.value);
+//     searchInput.value = "";
+//   }
+//   return false;
+// };
+getUserData("AmitDeka");
+// getUserData("AmitDekaasasa");
