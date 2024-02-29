@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;600;700;800&display=swap");
 @import "./breakpoints";
+@import "./animations";
 
 *,
 *::before,
@@ -17,6 +18,9 @@ $primary-light: #fefefd;
 $secondary-light: #8f95a4;
 
 body {
+  animation: fadeInAnimation ease 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   background-color: $primary-dark;
   color: $primary-light;
   font-family: "Proza Libre", sans-serif;
@@ -110,6 +114,9 @@ body {
         font-size: 1rem;
         padding: 0.5rem;
         width: 100%;
+        &::placeholder {
+          color: rgba($primary-light, 0.5);
+        }
         &:focus {
           outline: none;
         }
@@ -147,6 +154,9 @@ body {
   }
   &_user {
     align-items: center;
+    animation: fadeInAnimation ease 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
     background-color: $secondary-dark;
     border-radius: 1rem;
     display: flex;

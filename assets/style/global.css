@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;600;700;800&display=swap");
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 *,
 *::before,
 *::after {
@@ -8,6 +16,9 @@
 }
 
 body {
+  animation: fadeInAnimation ease 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   background-color: #141c2f;
   color: #fefefd;
   font-family: "Proza Libre", sans-serif;
@@ -121,6 +132,9 @@ body {
   padding: 0.5rem;
   width: 100%;
 }
+.card_search form input::placeholder {
+  color: rgba(254, 254, 253, 0.5);
+}
 .card_search form input:focus {
   outline: none;
 }
@@ -163,6 +177,9 @@ body {
 }
 .card_user {
   align-items: center;
+  animation: fadeInAnimation ease 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   background-color: #1f2a48;
   border-radius: 1rem;
   display: flex;
