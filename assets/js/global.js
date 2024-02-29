@@ -105,14 +105,12 @@ getUserData = async (username) => {
   userDetails.innerHTML = userDetailsCard;
 };
 
-// const formSubmit = () => {
-//   const searchInput = document.querySelector("#usrName");
-//   console.log(searchInput.value);
-//   if (searchInput.value != "") {
-//     getUserData(searchInput.value);
-//     searchInput.value = "";
-//   }
-//   return false;
-// };
-getUserData("AmitDeka");
-// getUserData("AmitDekaasasa");
+const formSubmit = () => {
+  const searchInput = document.querySelector("#usrName");
+  console.log(searchInput.value);
+  if (searchInput.value != "") {
+    getUserData(searchInput.value);
+    searchInput.value = "";
+  }
+  return false;
+};
